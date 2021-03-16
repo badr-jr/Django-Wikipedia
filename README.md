@@ -26,7 +26,6 @@ This project shows implementation of Wikipedia-like online encyclopedia.
 
 
 ## Getting Started
-Install SQLite from [here](https://www.sqlite.org/download.html).
 
 Install python from [here](https://www.python.org/downloads/).
 
