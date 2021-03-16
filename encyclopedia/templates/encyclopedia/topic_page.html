@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+
+{{title}}
+
+{% endblock %}
+
+{% block body %}
+
+{{ content |safe}}
+{% if content != "<h1> The request page was not found. </h1>" %}
+<form action="{% url 'wiki:edit_page' word=title%}">
+    <button type="submit" class="btn btn-primary save_btn">Edit</button>
+</form>
+{% endif %}
+{% endblock %}

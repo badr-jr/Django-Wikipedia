@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit {{title}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <form method="POST" action="{% url 'wiki:edit_page' word=title%}">
+        {% csrf_token %}
+        {{editForm}}
+        <button type="submit" class="btn btn-primary save_btn">Save</button>
+        <a href="{% url 'wiki:index' %}">Home</a>
+    </form>
+
+</body>
+
+</html>

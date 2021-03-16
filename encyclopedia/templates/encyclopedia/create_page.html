@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="offset-3 col-md-6">
+        <form method="POST" action="{% url 'wiki:create_page' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                {{create_form}}
+            </div>
+            <button type="submit" class="btn btn-primary save_btn">Save</button>
+            <a href="{% url 'wiki:index' %}">Home</a>
+            <h1>{{error_message}}</h1>
+        </form>
+    </div>
+</body>
+
+</html>
